@@ -1,2 +1,4 @@
 node_modules
-coba.pem
+latihan-ec2-key.pem
+.env
+.prod.env
