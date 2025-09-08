@@ -6,7 +6,7 @@ const { mapDBToModel } = require('../../utils');
 
 class NotesService {
     constructor() {
-        this._pool = new Pool();
+        this._pool = new Pool(); // tidak perlu konfigurasi tambahan di sini karena ada .prod.env
     }
 
     async addNote({ title, body, tags }) {
