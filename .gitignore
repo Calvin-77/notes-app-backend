@@ -2,3 +2,5 @@ node_modules
 latihan-ec2-key.pem
 .env
 .prod.env
+*.postman_collection.json
+*.postman_environment.json
