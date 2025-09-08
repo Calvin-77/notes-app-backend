@@ -61,7 +61,7 @@ class UsersService {
         if (!match) {
             throw new AuthenticationError('Kredensial yang Anda berikan salah');
         }
-        
+
         return id;
     }
 
@@ -78,6 +78,15 @@ class UsersService {
         }
 
         return result.rows[0];
+    }
+
+    async getUsersByUsername(username) {
+        const query = {
+            text: 'SELECT id, username, fullname FROM users WHERE username LIKE $1',
+            values: [`%${username}%`],
+        };
+        const result = await this._pool.query(query);
+        return result.rows;
     }
 }
 
